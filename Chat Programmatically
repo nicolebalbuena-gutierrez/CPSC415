@@ -1,0 +1,61 @@
+from openai import OpenAI
+client = OpenAI()
+
+response = client.chat.completions.create(
+  model="gpt-4o",
+  messages=[
+    {
+      "role": "system",
+      "content": [
+        {
+          "text": "You are an Investment Banker ",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "What are the technical questions I should know for Investment Banking recruiting? \n"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "Preparing for investment banking interviews requires a deep understanding of various technical topics. Here are some key areas and common questions you should be familiar with:\n\n### 1. **Accounting**\n- **Three Financial Statements:**\n  - Can you walk me through the three financial statements?\n- **Financial Ratios:**\n  - Explain key financial ratios such as EBITDA, ROE, P/E ratio, and how they are used.\n- **Linkages:**\n  - How do the three financial statements link together?\n- **Accounting Principles:**\n  - Understand key accounting principles like accrual vs. cash accounting, revenue recognition, and matching principle.\n\n### 2. **Valuation Techniques**\n- **DCF (Discounted Cash Flow) Analysis:**\n  - Walk me through a DCF valuation.\n  - What are the components of calculating free cash flows?\n  - How do you determine the appropriate discount rate?\n- **Comparable Company Analysis:**\n  - How do you perform a comparable company analysis?\n  - What multiples do you look at and why?\n- **Precedent Transactions:**\n  - How do you conduct a precedent transactions analysis?\n- **LBO (Leveraged Buyout) Analysis:**\n  - What is an LBO and how do you create an LBO model?\n\n### 3. **Merger & Acquisitions (M&A)**\n- **Accretion/Dilution Analysis:**\n  - What is accretion and dilution in the context of M&A?\n  - Can you walk me through an accretion/dilution analysis?\n- **Synergies:**\n  - Discuss the different types of synergies (revenue and cost synergies).\n\n### 4. **Financial Modeling**\n- Proficiency in building financial models from scratch, including:\n  - 3-statement models\n  - Valuation models\n  - Transaction models (M&A and LBO)\n\n### 5. **Markets and Economy**\n- Understanding of economic indicators and their impact on financial markets.\n- Familiarity with current trends and recent significant market events.\n\n### 6. **Industry-Specific Knowledge**\n- Knowledge of specific industries relevant to the role or team you are interviewing for (e.g., technology, healthcare, energy).\n\n### 7. **Miscellaneous Technical Questions**\n- **Enterprise Value vs. Equity Value:**\n  - What is the difference between enterprise value and equity value?\n  - How do you calculate enterprise value?\n- **WACC (Weighted Average Cost of Capital):**\n  - How do you calculate WACC?\n- **CAPM (Capital Asset Pricing Model):**\n  - Explain the CAPM formula and its components.\n\n### Examples of Detailed Questions:\n\n1. **DCF Valuation:**\n   - Q: How do you calculate terminal value in a DCF model?\n   - A: Approaches include the perpetuity growth method (using a constant growth rate for FCFs beyond the projection period) and the exit multiple method (applying a multiple to the final year’s FCF or EBITDA).\n\n2. **Comparable Company Analysis:**\n   - Q: How would you select comparable companies?\n   - A: Common criteria include industry, size, growth rate, profitability, and geographic location.\n\n3. **LBO Analysis:**\n   - Q: What are the key drivers of an LBO model?\n   - A: The purchase price, debt levels, operating improvements, and exit value.\n\n### Behavioral and Situational Questions\nWhile technical knowledge is crucial, behavioral and situational questions are equally important. Be prepared to discuss your experiences, why you are interested in investment banking, and examples of past work that demonstrate your skills and qualifications.\n\nBy mastering these technical areas and practicing with real-world examples, you'll be well-prepared for investment banking interviews."
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "what is in this image? https://en.wikipedia.org/wiki/Cat#/media/File:Cat_August_2010-4.jpg\n"
+        }
+      ]
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "text",
+          "text": "I cannot view images directly. However, based on the URL you provided, it seems to be an image of a cat from the Wikipedia page dedicated to cats. If you want more information or a description related to cats, feel free to ask!"
+        }
+      ]
+    }
+  ],
+  temperature=1,
+  max_tokens=2048,
+  top_p=1,
+  frequency_penalty=0,
+  presence_penalty=0,
+  response_format={
+    "type": "text"
+  }
+)
